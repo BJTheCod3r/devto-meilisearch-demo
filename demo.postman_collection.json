@@ -1,0 +1,740 @@
+{
+	"info": {
+		"_postman_id": "7f135577-bb1f-4f4d-851c-f6b515473e02",
+		"name": "Meilisearch Demo Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7663075"
+	},
+	"item": [
+		{
+			"name": "Add Documents",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n  { \"id\": 1, \"title\": \"Inception\", \"genre\": \"Sci-Fi\", \"year\": 2010 },\n  { \"id\": 2, \"title\": \"Interstellar\", \"genre\": \"Sci-Fi\", \"year\": 2014 },\n  { \"id\": 3, \"title\": \"The Dark Knight\", \"genre\": \"Action\", \"year\": 2008 },\n  { \"id\": 4, \"title\": \"Tenet\", \"genre\": \"Thriller\", \"year\": 2020 }\n]"
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/documents",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"documents"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Documents: Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n  { \"id\": 1, \"title\": \"Inception\", \"genre\": \"Sci-Fi\", \"year\": 2010 },\n  { \"id\": 2, \"title\": \"Interstellar\", \"genre\": \"Sci-Fi\", \"year\": 2014 },\n  { \"id\": 3, \"title\": \"The Dark Knight\", \"genre\": \"Action\", \"year\": 2008 },\n  { \"id\": 4, \"title\": \"Tenet\", \"genre\": \"Thriller\", \"year\": 2020 }\n]"
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/documents",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"documents"
+							]
+						}
+					},
+					"status": "Accepted",
+					"code": 202,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "transfer-encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "content-encoding",
+							"value": "br"
+						},
+						{
+							"key": "vary",
+							"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers"
+						},
+						{
+							"key": "vary",
+							"value": "accept-encoding"
+						},
+						{
+							"key": "date",
+							"value": "Fri, 31 Oct 2025 09:43:29 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"taskUid\": 4,\n    \"indexUid\": \"movies\",\n    \"status\": \"enqueued\",\n    \"type\": \"documentAdditionOrUpdate\",\n    \"enqueuedAt\": \"2025-10-31T09:43:30.151488712Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Filterable Attributes",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    \"genre\", \"year\"\n]"
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/settings/filterable-attributes",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"settings",
+						"filterable-attributes"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Filterable Attributes: Success",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    \"genre\", \"year\"\n]"
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/settings/filterable-attributes",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"settings",
+								"filterable-attributes"
+							]
+						}
+					},
+					"status": "Accepted",
+					"code": 202,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "transfer-encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "vary",
+							"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers"
+						},
+						{
+							"key": "vary",
+							"value": "accept-encoding"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "content-encoding",
+							"value": "br"
+						},
+						{
+							"key": "date",
+							"value": "Fri, 31 Oct 2025 09:45:24 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"taskUid\": 5,\n    \"indexUid\": \"movies\",\n    \"status\": \"enqueued\",\n    \"type\": \"settingsUpdate\",\n    \"enqueuedAt\": \"2025-10-31T09:45:25.206300126Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Sortable Attributes",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n \"year\"\n]"
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/settings/sortable-attributes",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"settings",
+						"sortable-attributes"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Sortable Attributes: Success",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n \"year\"\n]"
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/settings/sortable-attributes",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"settings",
+								"sortable-attributes"
+							]
+						}
+					},
+					"status": "Accepted",
+					"code": 202,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "transfer-encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "vary",
+							"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers"
+						},
+						{
+							"key": "vary",
+							"value": "accept-encoding"
+						},
+						{
+							"key": "content-encoding",
+							"value": "br"
+						},
+						{
+							"key": "date",
+							"value": "Fri, 31 Oct 2025 09:47:07 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"taskUid\": 6,\n    \"indexUid\": \"movies\",\n    \"status\": \"enqueued\",\n    \"type\": \"settingsUpdate\",\n    \"enqueuedAt\": \"2025-10-31T09:47:07.685975924Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Check Index Settings",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/settings/settings",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"settings",
+						"settings"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Check Index Settings: Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/settings",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"settings"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "transfer-encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "vary",
+							"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers"
+						},
+						{
+							"key": "vary",
+							"value": "accept-encoding"
+						},
+						{
+							"key": "content-encoding",
+							"value": "br"
+						},
+						{
+							"key": "date",
+							"value": "Fri, 31 Oct 2025 09:48:28 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"displayedAttributes\": [\n        \"*\"\n    ],\n    \"searchableAttributes\": [\n        \"*\"\n    ],\n    \"filterableAttributes\": [\n        \"genre\",\n        \"year\"\n    ],\n    \"sortableAttributes\": [\n        \"year\"\n    ],\n    \"rankingRules\": [\n        \"words\",\n        \"typo\",\n        \"proximity\",\n        \"attribute\",\n        \"sort\",\n        \"exactness\"\n    ],\n    \"stopWords\": [],\n    \"nonSeparatorTokens\": [],\n    \"separatorTokens\": [],\n    \"dictionary\": [],\n    \"synonyms\": {},\n    \"distinctAttribute\": null,\n    \"proximityPrecision\": \"byWord\",\n    \"typoTolerance\": {\n        \"enabled\": true,\n        \"minWordSizeForTypos\": {\n            \"oneTypo\": 5,\n            \"twoTypos\": 9\n        },\n        \"disableOnWords\": [],\n        \"disableOnAttributes\": [],\n        \"disableOnNumbers\": false\n    },\n    \"faceting\": {\n        \"maxValuesPerFacet\": 100,\n        \"sortFacetValuesBy\": {\n            \"*\": \"alpha\"\n        }\n    },\n    \"pagination\": {\n        \"maxTotalHits\": 1000\n    },\n    \"embedders\": {},\n    \"searchCutoffMs\": null,\n    \"localizedAttributes\": null,\n    \"facetSearch\": true,\n    \"prefixSearch\": \"indexingTime\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Search Movies (Simple)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"q\": \"inception\" }"
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/search",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"search"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Search Movies (Simple): Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"q\": \"inception\" }"
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/search",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"search"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "transfer-encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "vary",
+							"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers"
+						},
+						{
+							"key": "vary",
+							"value": "accept-encoding"
+						},
+						{
+							"key": "content-encoding",
+							"value": "br"
+						},
+						{
+							"key": "date",
+							"value": "Fri, 31 Oct 2025 09:49:19 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"hits\": [\n        {\n            \"id\": 1,\n            \"title\": \"Inception\",\n            \"genre\": \"Sci-Fi\",\n            \"year\": 2010\n        }\n    ],\n    \"query\": \"inception\",\n    \"processingTimeMs\": 3,\n    \"limit\": 20,\n    \"offset\": 0,\n    \"estimatedTotalHits\": 1,\n    \"requestUid\": \"019a39ab-edba-7bd3-9924-3285865d0ef7\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Search Movies (Fuzzy)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"q\": \"interstllar\" }"
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/search",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"search"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Search Movies (Fuzzy): Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"q\": \"interstllar\" }"
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/search",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"search"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "transfer-encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "vary",
+							"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers"
+						},
+						{
+							"key": "vary",
+							"value": "accept-encoding"
+						},
+						{
+							"key": "content-encoding",
+							"value": "br"
+						},
+						{
+							"key": "date",
+							"value": "Fri, 31 Oct 2025 09:49:57 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"hits\": [\n        {\n            \"id\": 2,\n            \"title\": \"Interstellar\",\n            \"genre\": \"Sci-Fi\",\n            \"year\": 2014\n        }\n    ],\n    \"query\": \"interstllar\",\n    \"processingTimeMs\": 3,\n    \"limit\": 20,\n    \"offset\": 0,\n    \"estimatedTotalHits\": 1,\n    \"requestUid\": \"019a39ac-7f1d-7ad0-a163-101f903992b0\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Search Movies (Filter by Year)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"q\": \"Sci-Fi\", \"filter\": \"year > 2010\" }"
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/search",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"search"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Search Movies (Filter by Year): Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"q\": \"Sci-Fi\", \"filter\": \"year > 2010\" }"
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/search",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"search"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "transfer-encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "vary",
+							"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers"
+						},
+						{
+							"key": "vary",
+							"value": "accept-encoding"
+						},
+						{
+							"key": "content-encoding",
+							"value": "br"
+						},
+						{
+							"key": "date",
+							"value": "Fri, 31 Oct 2025 09:50:56 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"hits\": [\n        {\n            \"id\": 2,\n            \"title\": \"Interstellar\",\n            \"genre\": \"Sci-Fi\",\n            \"year\": 2014\n        }\n    ],\n    \"query\": \"Sci-Fi\",\n    \"processingTimeMs\": 20,\n    \"limit\": 20,\n    \"offset\": 0,\n    \"estimatedTotalHits\": 1,\n    \"requestUid\": \"019a39ad-66a6-7380-88ca-1cd90c482cbc\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Search Movies (Sort by Year DESC)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer masterKey123"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"q\": \"sci-fi\", \"sort\": [\"year:desc\"] }"
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/search",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"search"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Search Movies (Sort by Year DESC): Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer masterKey123"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"q\": \"sci-fi\", \"sort\": [\"year:desc\"] }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/search",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"search"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "transfer-encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "vary",
+							"value": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers"
+						},
+						{
+							"key": "vary",
+							"value": "accept-encoding"
+						},
+						{
+							"key": "content-encoding",
+							"value": "br"
+						},
+						{
+							"key": "date",
+							"value": "Fri, 31 Oct 2025 10:06:04 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"hits\": [\n        {\n            \"id\": 2,\n            \"title\": \"Interstellar\",\n            \"genre\": \"Sci-Fi\",\n            \"year\": 2014\n        },\n        {\n            \"id\": 1,\n            \"title\": \"Inception\",\n            \"genre\": \"Sci-Fi\",\n            \"year\": 2010\n        }\n    ],\n    \"query\": \"sci-fi\",\n    \"processingTimeMs\": 20,\n    \"limit\": 20,\n    \"offset\": 0,\n    \"estimatedTotalHits\": 2,\n    \"requestUid\": \"019a39bb-43a8-77a3-a3c0-472a5bb9f3ab\"\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{BEARER_TOKEN}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BEARER_TOKEN",
+			"value": "a4qaSFPIfDbrwviM5XsogCK77Oa-YCtpKP4i6cAxr7w"
+		},
+		{
+			"key": "BASE_URL",
+			"value": "http://localhost:7700/indexes/movies"
+		}
+	]
+}
